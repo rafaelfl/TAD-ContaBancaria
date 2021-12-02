@@ -1,9 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "ContaBancaria.h"
 
-void inicializar_conta(ContaBancaria *conta, int nr, double saldo_inicial) {
+ContaBancaria * inicializar_conta(int nr, double saldo_inicial) {
+  ContaBancaria *conta;
+
+  conta = malloc(sizeof(ContaBancaria));
+  
   conta->numero = nr;
   conta->saldo = saldo_inicial;
+
+  return conta;
 }
 
 void depositar(ContaBancaria *conta, double valor) {
@@ -21,4 +28,8 @@ void transferencia(ContaBancaria *conta1, ContaBancaria *conta2, double valor) {
 
 void imprimir_saldo(ContaBancaria *conta) {
   printf("O saldo da conta %d é: %.2f\n", conta->numero, conta->saldo);
+}
+
+void destruir_conta(ContaBancaria *conta) {
+  free(conta);
 }
