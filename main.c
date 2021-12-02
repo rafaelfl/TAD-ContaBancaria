@@ -17,6 +17,8 @@ int main(void) {
   sacar(&conta1, 5.0);
   sacar(&conta2, 1000.0);
 
+  transferencia(&conta2, &conta1, 1000);
+
   imprimir_saldo(&conta1);
   imprimir_saldo(&conta2);
 

@@ -16,4 +16,6 @@ void depositar(ContaBancaria *conta, double valor);
 
 void sacar(ContaBancaria *conta, double valor);
 
+void transferencia(ContaBancaria *conta1, ContaBancaria *conta2, double valor);
+
 void imprimir_saldo(ContaBancaria *conta);
